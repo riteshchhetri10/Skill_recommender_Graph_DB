@@ -218,8 +218,47 @@ CREATE (Azure) - [:is_a_part_of] -> (Tools)
 CREATE (Google_Cloud) - [:is_a_part_of] -> (Tools)
 CREATE (Spotfire) - [:is_a_part_of] -> (Tools)
 
-//Maths/Stats segment
-CREATE (Python) - [:is_a_part_of] -> (Tools)
+//AI/ML segment
+CREATE (Classical_Machine_Learning) - [:is_a_part_of] -> (AI_ML)
+CREATE (Computer_Vision) - [:is_a_part_of] -> (AI_ML)
+CREATE (Data_Analysis) - [:is_a_part_of] -> (AI_ML)
+CREATE (Deep_Learning) - [:is_a_part_of] -> (AI_ML)
+CREATE (Data_Mining) - [:is_a_part_of] -> (AI_ML)
+CREATE (Data_Visualization) - [:is_a_part_of] -> (AI_ML)
+CREATE (Classical_NLP) - [:is_a_part_of] -> (AI_ML)
+CREATE (Transformer_NLP) - [:is_a_part_of] -> (AI_ML)
+CREATE (MLOps) - [:is_a_part_of] -> (AI_ML)
+CREATE (Prompt_Engineering) - [:is_a_part_of] -> (AI_ML)
+CREATE (Data_Modelling) - [:is_a_part_of] -> (AI_ML)
+CREATE (Model_Deployment) - [:is_a_part_of] -> (AI_ML)
+CREATE (Data_Pipelining) - [:is_a_part_of] -> (AI_ML)
+CREATE (Reinforcement_Learning) - [:is_a_part_of] -> (AI_ML)
+CREATE (Predictive_Modelling) - [:is_a_part_of] -> (AI_ML)
+CREATE (Model_Monitoring) - [:is_a_part_of] -> (AI_ML)
+
+// Maths/Stats segment
+
+CREATE (Statistical_Analysis) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Time_Series_Analysis) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Stochastic_Process) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Linear_Algebra) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Probability) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Inferential_Statistics) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Probability_and_Statistics) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Optimization_Algorithms) - [:is_a_part_of] -> (Maths_Stats)
+CREATE (Statistical_Analysis) - [:is_a_part_of] -> (Maths_Stats)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
