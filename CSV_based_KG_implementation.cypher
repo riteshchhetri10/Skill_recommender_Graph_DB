@@ -1,266 +1,76 @@
-// Employee Skill recommender DB creation 
-
-//Creating Nodes for each employee with their respective attributes
-
-CREATE (E1 : EMPLOYEE {name: "E1",YOE:16, Designation:"LQAS"})
-CREATE (E2 : EMPLOYEE {name: "E2",YOE:3, Designation:"QAS"})
-CREATE (E3 : EMPLOYEE {name: "E3",YOE:0, Designation:"PA"})
-CREATE (E4 : EMPLOYEE {name: "E4",YOE:2, Designation:"QAS"})
-CREATE (E5 : EMPLOYEE {name: "E5",YOE:3, Designation:"QAS"})
-CREATE (E6 : EMPLOYEE {name: "E6",YOE:5, Designation:"SQAS"})
-CREATE (E7 : EMPLOYEE {name: "E7",YOE:5, Designation:"QAS"})
-CREATE (E8 : EMPLOYEE {name: "E8",YOE:0, Designation:"PA"})
-CREATE (E9 : EMPLOYEE {name: "E9",YOE:6, Designation:"QAS"})
-CREATE (E10 : EMPLOYEE {name: "E10",YOE:5, Designation:"QAS"})
-CREATE (E11 : EMPLOYEE {name: "E11",YOE:4, Designation:"SQAS"})
-CREATE (E12 : EMPLOYEE {name: "E12",YOE:13, Designation:"LQAS"})
-CREATE (E13 : EMPLOYEE {name: "E13",YOE:5, Designation:"SQAS"})
-CREATE (E14 : EMPLOYEE {name: "E14",YOE:3, Designation:"QAS"})
-CREATE (E15 : EMPLOYEE {name: "E15",YOE:3, Designation:"QAS"})
-CREATE (E16 : EMPLOYEE {name: "E16",YOE:6, Designation:"SQAS"})
-
-// creating nodes for each of the broader skill segments
-
-CREATE ( Tools : Skill_Segment {name: "Tools"})
-CREATE ( AI_ML : Skill_Segment {name: "AI/ML"})
-CREATE ( Maths_Stats : Skill_Segment {name: "Maths/Stats"})
-CREATE ( Business_Domain : Skill_Segment {name: "Business/Domain"})
-CREATE ( Technical : Skill_Segment {name: "Technical"})
-CREATE ( Soft_Skills : Skill_Segment {name: "Soft_Skills"})
-
-// creating nodes for each of the individual topics within skill segments
-
-// nodes pertaining to Tools segment
-CREATE ( Python : topic {name: "Python"})
-CREATE ( R : topic {name: "R"})
-CREATE ( Excel : topic {name: "MS Excel"})
-CREATE ( Pyspark : topic {name: "Pyspark"})
-CREATE ( CPP : topic {name: "C++"})
-CREATE ( C : topic {name: "C"})
-CREATE ( Tableau : topic {name: "Tableau"})
-CREATE ( Git : topic {name: "Git"})
-CREATE ( MATLAB : topic {name: "MATLAB"})
-CREATE ( SQL : topic {name: "SQL"})
-CREATE ( SAS : topic {name: "SAS"})
-CREATE ( Office : topic {name: "MS Office"})
-CREATE ( Azure : topic {name: "Azure"})
-CREATE ( Google_Cloud : topic {name: "Google Cloud"})
-CREATE ( Spotfire : topic {name: "Spotfire"})
-
-
-// nodes pertaining to AI/ML
-
-CREATE ( Classical_Machine_Learning : topic {name: "Classical Machine Learning"})
-CREATE ( Computer_Vision : topic {name: "Computer Vision"})
-CREATE ( Data_Analysis : topic {name: "Data Analysis"})
-CREATE ( Deep_Learning : topic {name: "Deep Learning"})
-CREATE ( Data_Mining : topic {name: "Data Mining"})
-CREATE ( Data_Visualization : topic {name: "Data Visualization"})
-CREATE ( Classical_NLP : topic {name: "Classical NLP"})
-CREATE ( Transformer_NLP : topic {name: "Transformer NLP"})
-CREATE ( MLOps : topic {name: "MLOps"})
-CREATE ( Prompt_Engineering : topic {name: "Prompt engineering"})
-CREATE ( Data_Modelling : topic {name: "Data Modelling"})
-CREATE ( Model_Deployment : topic {name: "Model_Deployment"})
-CREATE ( Data_Pipelining : topic {name: "Data Pipelining"})
-CREATE ( Reinforcement_Learning : topic {name: "Reinforcement Learning"})
-CREATE ( Predictive_Modelling : topic {name: "Predictive Modelling"})
-CREATE ( Model_Monitoring : topic {name: "Model Monitoring"})
-
-// nodes pertaining to Maths/Stats
-
-CREATE ( Statistical_Analysis : topic {name: "Statistical_Analysis"})
-CREATE ( Time_Series_Analysis : topic {name: "Time Series Analysis"})
-CREATE ( Stochastic_Process : topic {name: "Stochastic Process"})
-CREATE ( Linear_Algebra : topic {name: "Linear Algebra"})
-CREATE ( Probability : topic {name: "Probability"})
-CREATE ( Inferential_Statistics : topic {name: "Inferential Statistics"})
-CREATE ( Probability_and_Statistics : topic {name: "Probability and statistics"})
-CREATE ( Optimization_Algorithms : topic {name: "Optimization Algorithms"})
-CREATE ( Calculus : topic {name: "Calculus"})
-CREATE ( Statistical_Modelling : topic {name: "Statistical modelling"})
-CREATE ( Hypothesis_Testing : topic {name: "Hypothesis testing"})
-
-// nodes for Business/Domain
-
-CREATE ( Card_Analytics : topic {name: "Card Analytics"})
-CREATE ( Call_Network_Architecture : topic {name: "Call network architecture"})
-CREATE ( Finance : topic {name: "Finance"})
-CREATE ( Financial_Analysis : topic {name: "Financial Analysis"})
-CREATE ( Contact_Center_Analytics : topic {name: "Contact center analytics"})
-CREATE ( Quant_Finance : topic {name: "Quant Finance"})
-CREATE ( Payments_Initiation_Channel : topic {name: "Payments initiation channel"})
-CREATE ( Algorithmic_Trade : topic {name: "Algorithmic trade"})
-CREATE ( AIMDCOE_Processes : topic {name: "AIMDCOE_processes"})
-CREATE ( Operations_Research : topic {name: "Operations Research"})
-CREATE ( Capital_Market_Analysis : topic {name: "Capital market analysis"})
-CREATE ( Payments_Ecosystem : topic {name: "Payments Ecosystem"})
-CREATE ( Financial_Modelling : topic {name: "Financial modelling"})
-CREATE ( Banking_Domain_Knowledge : topic {name: "Banking domain knowledge"})
-
-// nodes for technical segment
-
-CREATE ( Cloud_Computing : topic {name: "cloud computing"})
-CREATE ( Big_Data_Management : topic {name: "Big data management"})
-CREATE ( Programming : topic {name: "Programming"})
-CREATE ( Data_Analytics : topic {name: "Data Analytics"})
-CREATE ( Reports_and_Documentation : topic {name: "reports and documentation"})
-CREATE ( Design_Thinking : topic {name: "Design Thinking"})
-
-// nodes for Soft Skills
-
-CREATE ( Presentation : topic {name: "Presentation"})
-CREATE ( Communication : topic {name: "Communication"})
-CREATE ( StoryTelling : topic {name: "StoryTelling"})
-CREATE ( Stakeholder_Management : topic {name: "Stakeholder_Management"})
-CREATE ( Client_Relationship_Management : topic {name: "Client Relationship Management"})
-CREATE ( Critical_Thinking : topic {name: "Critical Thinking"})
-CREATE ( Product_Management : topic {name: "Product Management"})
-CREATE ( Agile : topic {name: "Agile"})
-CREATE ( Leadership : topic {name: "Leadership"})
-CREATE ( Project_Management : topic {name: "Project Management"})
-CREATE ( Scrum : topic {name: "Scrum"})
-
-// creating relationships between employee node and the mentioned topic in which they are skilled
-
-//E1 employee's skills ( 1 to 10 rating)
-
-CREATE (E1) - [:is_skilled_in{skill_rating:8}] -> (Finance)
-CREATE (E1) - [:is_skilled_in{skill_rating:7}] -> (Data_Analysis)
-CREATE (E1) - [:is_skilled_in{skill_rating:9}] -> (Card_Analytics)
-CREATE (E1) - [:is_skilled_in{skill_rating:5}] -> (Contact_Center_Analytics)
-CREATE (E1) - [:is_skilled_in{skill_rating:7}] -> (Presentation)
-CREATE (E1) - [:is_skilled_in{skill_rating:8}] -> (Python)
-CREATE (E1) - [:is_skilled_in{skill_rating:8}] -> (Statistical_Modelling)
-CREATE (E1) - [:is_skilled_in{skill_rating:6}] -> (Deep_Learning)
-CREATE (E1) - [:is_skilled_in{skill_rating:8}] -> (Capital_Market_Analysis)
-CREATE (E1) - [:is_skilled_in{skill_rating:7}] -> (Pyspark)
-CREATE (E1) - [:is_skilled_in{skill_rating:7}] -> (SAS)
-
-
-//E2 employee's skills ( 1 to 10 rating)
-
-CREATE (E2) - [:is_skilled_in{skill_rating:8}] -> (Python)
-CREATE (E2) - [:is_skilled_in{skill_rating:8}] -> (Time_Series_Analysis)
-CREATE (E2) - [:is_skilled_in{skill_rating:7}] -> (Data_Visualization)
-CREATE (E2) - [:is_skilled_in{skill_rating:9}] -> (Presentation)
-CREATE (E2) - [:is_skilled_in{skill_rating:3}] -> (Classical_Machine_Learning)
-CREATE (E2) - [:is_skilled_in{skill_rating:4}] -> (Classical_NLP)
-CREATE (E2) - [:is_skilled_in{skill_rating:9}] -> (Statistical_Algorithms)
-CREATE (E2) - [:is_skilled_in{skill_rating:9}] -> (Hypothesis_Testing)
-CREATE (E2) - [:is_skilled_in{skill_rating:9}] -> (Inferential_statistics)
-CREATE (E2) - [:is_skilled_in{skill_rating:9}] -> (Contact_Center_Analytics)
-CREATE (E2) - [:is_skilled_in{skill_rating:9}] -> (Payments_Ecosystem)
-
-//E3 employee's skills ( 1 to 10 rating)
-
-CREATE (E3) - [:is_skilled_in{skill_rating:6}] -> (Python)
-CREATE (E3) - [:is_skilled_in{skill_rating:4}] -> (R)
-CREATE (E3) - [:is_skilled_in{skill_rating:5}] -> (SQL)
-CREATE (E3) - [:is_skilled_in{skill_rating:6}] -> (Excel)
-CREATE (E3) - [:is_skilled_in{skill_rating:6}] -> (Communication)
-CREATE (E3) - [:is_skilled_in{skill_rating:6}] -> (Tableau)
-CREATE (E3) - [:is_skilled_in{skill_rating:6}] -> (CPP)
-CREATE (E3) - [:is_skilled_in{skill_rating:5}] -> (C)
-CREATE (E3) - [:is_skilled_in{skill_rating:7}] -> (Statistical_Analysis)
-CREATE (E3) - [:is_skilled_in{skill_rating:7}] -> (Supervised_ML)
-
-//E4 employee's skills ( 1 to 10 rating)
-
-CREATE (E4) - [:is_skilled_in{skill_rating:8}] -> (Python)
-CREATE (E4) - [:is_skilled_in{skill_rating:7}] -> (Pyspark)
-CREATE (E4) - [:is_skilled_in{skill_rating:8}] -> (Linear_Algebra)
-CREATE (E4) - [:is_skilled_in{skill_rating:8}] -> (Inferential_Statistics)
-CREATE (E4) - [:is_skilled_in{skill_rating:7}] -> (Classical_Machine_Learning)
-CREATE (E4) - [:is_skilled_in{skill_rating:6}] -> (Predictive_Modelling)
-CREATE (E4) - [:is_skilled_in{skill_rating:7}] -> (Payments_Initiation_Channel)
-CREATE (E4) - [:is_skilled_in{skill_rating:7}] -> (Git)
-CREATE (E4) - [:is_skilled_in{skill_rating:8}] -> (Time_Series_Analysis)
-CREATE (E4) - [:is_skilled_in{skill_rating:5}] -> (R)
-CREATE (E4) - [:is_skilled_in{skill_rating:7}] -> (Presentation)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// creating relationships between topics and the broader skill segments
-//Tools segment
-CREATE (Python) - [:is_a_part_of] -> (Tools)
-CREATE (R) - [:is_a_part_of] -> (Tools)
-CREATE (Excel) - [:is_a_part_of] -> (Tools)
-CREATE (Pyspark) - [:is_a_part_of] -> (Tools)
-CREATE (CPP) - [:is_a_part_of] -> (Tools)
-CREATE (Tableau) - [:is_a_part_of] -> (Tools)
-CREATE (C) - [:is_a_part_of] -> (Tools)
-CREATE (Git) - [:is_a_part_of] -> (Tools)
-CREATE (MATLAB) - [:is_a_part_of] -> (Tools)
-CREATE (SQL) - [:is_a_part_of] -> (Tools)
-CREATE (SAS) - [:is_a_part_of] -> (Tools)
-CREATE (Office) - [:is_a_part_of] -> (Tools)
-CREATE (Azure) - [:is_a_part_of] -> (Tools)
-CREATE (Google_Cloud) - [:is_a_part_of] -> (Tools)
-CREATE (Spotfire) - [:is_a_part_of] -> (Tools)
-
-//AI/ML segment
-CREATE (Classical_Machine_Learning) - [:is_a_part_of] -> (AI_ML)
-CREATE (Computer_Vision) - [:is_a_part_of] -> (AI_ML)
-CREATE (Data_Analysis) - [:is_a_part_of] -> (AI_ML)
-CREATE (Deep_Learning) - [:is_a_part_of] -> (AI_ML)
-CREATE (Data_Mining) - [:is_a_part_of] -> (AI_ML)
-CREATE (Data_Visualization) - [:is_a_part_of] -> (AI_ML)
-CREATE (Classical_NLP) - [:is_a_part_of] -> (AI_ML)
-CREATE (Transformer_NLP) - [:is_a_part_of] -> (AI_ML)
-CREATE (MLOps) - [:is_a_part_of] -> (AI_ML)
-CREATE (Prompt_Engineering) - [:is_a_part_of] -> (AI_ML)
-CREATE (Data_Modelling) - [:is_a_part_of] -> (AI_ML)
-CREATE (Model_Deployment) - [:is_a_part_of] -> (AI_ML)
-CREATE (Data_Pipelining) - [:is_a_part_of] -> (AI_ML)
-CREATE (Reinforcement_Learning) - [:is_a_part_of] -> (AI_ML)
-CREATE (Predictive_Modelling) - [:is_a_part_of] -> (AI_ML)
-CREATE (Model_Monitoring) - [:is_a_part_of] -> (AI_ML)
-
-// Maths/Stats segment
-
-CREATE (Statistical_Analysis) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Time_Series_Analysis) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Stochastic_Process) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Linear_Algebra) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Probability) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Inferential_Statistics) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Probability_and_Statistics) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Optimization_Algorithms) - [:is_a_part_of] -> (Maths_Stats)
-CREATE (Statistical_Analysis) - [:is_a_part_of] -> (Maths_Stats)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// reading data from csv that is uploaded to git repo in the raw format
+
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/riteshchhetri10/Skill_recommender_Graph_DB/main/Consolidated%20skill%20assessment%20-%20Sheet1-2.csv" AS row WITH row WHERE row.Employee_id is not null
+
+// create nodes for each category
+
+// employee nodes
+MERGE (E:Employee_id {EID : row.Employee_id, YOE : row.YOE})
+
+// Designation nodes
+MERGE (D:Designation {Designation: row.Designation})
+
+//Skill nodes 
+MERGE (S1:Skill1 {Skill1: row.Skill1})
+MERGE (S2:Skill2 {Skill2: row.Skill2})
+MERGE (S3:Skill3 {Skill3: row.Skill3})
+MERGE (S4:Skill4 {Skill4: row.Skill4})
+MERGE (S5:Skill5 {Skill5: row.Skill5})
+MERGE (S6:Skill6 {Skill6: row.Skill6})
+MERGE (S7:Skill7 {Skill7: row.Skill7})
+MERGE (S8:Skill8 {Skill8: row.Skill8})
+MERGE (S9:Skill9 {Skill9: row.Skill9})
+MERGE (S10:Skill10 {Skill10: row.Skill10})
+MERGE (S11:Skill11 {Skill11: row.Skill11})
+
+
+
+//Broader skill segment classification nodes
+MERGE (C1:Classification1 {C1: row.Classification1})
+MERGE (C2:Classification2 {C2: row.Classification2})
+MERGE (C3:Classification1 {C3: row.Classification3})
+MERGE (C4:Classification1 {C4: row.Classification4})
+MERGE (C5:Classification1 {C5: row.Classification5})
+MERGE (C6:Classification1 {C6: row.Classification6})
+MERGE (C7:Classification1 {C7: row.Classification7})
+MERGE (C8:Classification1 {C8: row.Classification8})
+MERGE (C9:Classification1 {C9: row.Classification9})
+MERGE (C10:Classification1 {C10: row.Classification10})
+MERGE (C11:Classification1 {C11: row.Classification11})
+
+
+
+// creating relationships for each category 
+
+//employee and designation relationship
+MERGE (E)-[:DESIGNATED_AS]->(D)
+
+//employee and skill relationship ( rating embedded in the weight of the edge)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating1}]->(S1)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating2}]->(S2)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating3}]->(S3)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating4}]->(S4)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating5}]->(S5)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating6}]->(S6)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating7}]->(S7)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating8}]->(S8)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating9}]->(S9)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating10}]->(S10)
+MERGE (E)-[:Skilled_in{Skill_rating:row.Rating11}]->(S11)
+
+
+//skill and broader classification relationship
+MERGE (S1)-[:Classified_as]->(C1)
+MERGE (S2)-[:Classified_as]->(C2)
+MERGE (S3)-[:Classified_as]->(C3)
+MERGE (S4)-[:Classified_as]->(C4)
+MERGE (S5)-[:Classified_as]->(C5)
+MERGE (S6)-[:Classified_as]->(C6)
+MERGE (S7)-[:Classified_as]->(C7)
+MERGE (S8)-[:Classified_as]->(C8)
+MERGE (S9)-[:Classified_as]->(C9)
+MERGE (S10)-[:Classified_as]->(C10)
+MERGE (S11)-[:Classified_as]->(C11)
 
 
 
